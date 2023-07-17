@@ -8,31 +8,28 @@
 
 int main(void)
 {
-	int i = '0';
-	int j = '0';
+	num_1 = '0';
+	num_2 = '0';
 
-	while (i <= '9')
+	while (num_1 <= '9')
 	{
-		while (j <= '9')
+		while (num_2 <= '9')
 		{
-			if (!(i > j) || i == j)
+			if (num_1 < num_2)
 			{
-				putchar(i);
-				putchar(j);
-				if (i == '8' && j == '9')
+				putchar(num_1);
+				putchar(num_2);
+				if (num_1 != '8' || (num_1 == '8' && num_2 != '9'))
 				{
-					putchar('\n');
-				}
-				else
-				{
-					putchar(',');
-					putchar(' ');
+				putchar(',');
+				putchar(' ');
 				}
 			}
-			j++;
+			num_2++;
 		}
-		j = '0';
-		i++;
+		num_1++;
+		num_2 = '0';
 	}
-return (0);
+	putchar('\n');
+	return (0);
 }
